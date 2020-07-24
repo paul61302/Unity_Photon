@@ -355,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -380,7 +380,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8232895762270816232}
   - component: {fileID: -6641719372783642241}
-  - component: {fileID: 1036194443487690654}
+  - component: {fileID: -8005999084037651622}
+  - component: {fileID: -5378183892500032364}
   m_Layer: 5
   m_Name: Player2
   m_TagString: Untagged
@@ -431,11 +432,34 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 1036194443487690654}
+  - {fileID: -5378183892500032364}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &1036194443487690654
+--- !u!114 &-8005999084037651622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232895762270816235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622a2b1949527df4988636e9bd162ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pv: {fileID: -6641719372783642241}
+  PlayerCtr: {fileID: 0}
+  glasses:
+  - {fileID: 21300000, guid: 90890dfffebd7ee4286ebcd6b258ab31, type: 3}
+  - {fileID: 21300000, guid: 2b6ed2a36cdc7ba469c4ac80c0b9c5c2, type: 3}
+  - {fileID: 21300000, guid: e0cbf784791895e458cac9aa475f9152, type: 3}
+  - {fileID: 21300000, guid: 6e7836b30ef2ecf49a7167780e95130d, type: 3}
+  - {fileID: 21300000, guid: 63f8402f85cedc749bba17e2d82e4726, type: 3}
+  - {fileID: 21300000, guid: a88847a32ffd46a458267977086864f6, type: 3}
+  - {fileID: 21300000, guid: 11d8148f92269b84f856a77084dc6c93, type: 3}
+  myglasses: {fileID: 8232895761883739170}
+--- !u!114 &-5378183892500032364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

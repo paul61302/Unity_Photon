@@ -1,24 +1,44 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 
 public class PlayerPropty : MonoBehaviour
 {
-    PhotonView pv;
-    PlayerContrl myController;
+    public PhotonView pv;
+    public PlayerContrl PlayerCtr;
+    public Sprite[] glasses;
+    public Image myglasses;
 
-
-   void Start()
+    void Start()
     {
+       
+        PlayerCtr = FindObjectOfType<PlayerContrl>();
         pv = GetComponent<PhotonView>();
-        if(pv.IsMine)
+       
+        if (!pv.IsMine)
         {
-            
+            PlayerCtr = FindObjectOfType<PlayerContrl>();
+            pv.transform.parent = PlayerCtr.transform;
         }
+        if (pv.IsMine)
+        {
+            PlayerCtr = FindObjectOfType<PlayerContrl>();
+            pv.transform.parent = PlayerCtr.transform;
+        }
+
     }
 
-    void Update()
+    
+
+    public void Glasses(int glasses)
     {
-        myController = FindObjectOfType<PlayerContrl>();
-
+        pv.RPC("ChangeGlasses", RpcTarget.All, glasses);
     }
+
+    [PunRPC]
+    public void ChangeGlasses(int index)
+    {
+        myglasses.sprite = glasses[index];
+    }
+        
 }
