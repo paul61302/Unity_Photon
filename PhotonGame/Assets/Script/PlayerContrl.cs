@@ -5,20 +5,14 @@ using System;
 
 public class PlayerContrl : MonoBehaviour
 {
-    PhotonView pv;
+    //PhotonView pv;
 
-    public Sprite[] glasses;
+    //public Sprite[] glasses;
 
     public GameObject player;
-    
-   
 
     public void WearGlasses1(int index)
     {
-            
-            player.GetComponent<PlayerPropty>().Glasses(index);
-           
+        player.GetComponent<PlayerPropty>().Glasses(index);
     }
-   
-   
 }

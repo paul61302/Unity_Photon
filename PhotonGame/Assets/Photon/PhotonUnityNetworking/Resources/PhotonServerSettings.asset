@@ -15,7 +15,7 @@ MonoBehaviour:
   AppSettings:
     AppIdRealtime: 73dba54e-d15f-4e96-9589-da8299691e6d
     AppIdChat: 
-    AppIdVoice: 
+    AppIdVoice: 4f776d57-a49a-4c2a-a565-1febb48709e5
     AppVersion: 
     UseNameServer: 1
     FixedRegion: 
@@ -34,13 +34,12 @@ MonoBehaviour:
   StartInOfflineMode: 0
   RpcList:
   - ChangeColour
+  - ChangeGlasses
   - ClickRpc
   - DestroyRpc
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
-  - ChangeGlasses
-  - CampareGlasses
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

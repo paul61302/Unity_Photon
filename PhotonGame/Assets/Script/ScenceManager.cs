@@ -69,11 +69,6 @@ public class ScenceManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
             PhotonNetwork.RaiseEvent(evntcode, obj, EventOption, SendOptions.SendReliable);
         }
-        
-
-
-
-        
     }
 
     public void OnEvent(EventData photonEvent)
@@ -118,4 +113,6 @@ public class ScenceManager : MonoBehaviourPunCallbacks, IOnEventCallback
         base.OnDisable();
         PhotonNetwork.RemoveCallbackTarget(this);
     }
+
+
 }
