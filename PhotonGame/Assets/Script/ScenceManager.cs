@@ -5,7 +5,7 @@ using Photon.Realtime;
 using System.Collections;
 using ExitGames.Client.Photon;
 
-public class ScenceManager : MonoBehaviourPunCallbacks, IOnEventCallback
+public class ScenceManager : MonoBehaviourPunCallbacks, IOnEventCallback, IPunObservable
 {
     public GameObject PlayerCtr;
     public PlayerContrl Player;
@@ -13,9 +13,10 @@ public class ScenceManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public Text timeCount;
     public GameObject ButAgain;
 
-
+    
     void Start()
     {
+        #region 生成玩家
         if (PhotonNetwork.CountOfPlayersInRooms != 0)
         {
             GameObject Player2 =  PhotonNetwork.Instantiate("Player2", new Vector3(1430,550,0), Quaternion.identity);
@@ -31,28 +32,20 @@ public class ScenceManager : MonoBehaviourPunCallbacks, IOnEventCallback
             Player1.transform.rotation = new Quaternion(0, -180, 0, 0);
             Player.player = Player1;
         }
-            
-               
+        #endregion           
     }
-    /*private void Update()
-    {
-        if (PhotonNetwork.PlayerList.Length==1)
-        {
-            StartCoroutine(Timer());
-            print("123");
-        }
-    }*/
 
+    #region 計時
+
+    // 當有新玩家加入時執行
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
         if (PhotonNetwork.PlayerList.Length == 2 && PhotonNetwork.IsMasterClient)
         {
             StartCoroutine(Timer());
-            
         }
     }
-
 
     IEnumerator Timer()
     {
@@ -66,7 +59,6 @@ public class ScenceManager : MonoBehaviourPunCallbacks, IOnEventCallback
             byte evntcode = 1;
             object[] obj = new object[] { timer };
             RaiseEventOptions EventOption = new RaiseEventOptions { Receivers = ReceiverGroup.All };
-
             PhotonNetwork.RaiseEvent(evntcode, obj, EventOption, SendOptions.SendReliable);
         }
     }
@@ -90,6 +82,7 @@ public class ScenceManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 }
         }
         */
+
         if (photonEvent.Code == 1)
         {
             // 先轉出型態 將複數陣列轉成單一
@@ -113,6 +106,10 @@ public class ScenceManager : MonoBehaviourPunCallbacks, IOnEventCallback
         base.OnDisable();
         PhotonNetwork.RemoveCallbackTarget(this);
     }
+    #endregion
 
-
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        
+    }
 }

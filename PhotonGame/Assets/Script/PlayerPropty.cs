@@ -19,23 +19,6 @@ public class PlayerPropty : MonoBehaviour
     {
         myglasses.sprite = glasses[index];
     }
-    //void Start()
-    //{
-       
-    //    PlayerCtr = FindObjectOfType<PlayerContrl>();
-    //    pv = GetComponent<PhotonView>();
-       
-    //    if (!pv.IsMine)
-    //    {
-    //        PlayerCtr = FindObjectOfType<PlayerContrl>();
-    //        pv.transform.parent = PlayerCtr.transform;
-    //    }
-    //    if (pv.IsMine)
-    //    {
-    //        PlayerCtr = FindObjectOfType<PlayerContrl>();
-    //        pv.transform.parent = PlayerCtr.transform;
-    //    }
-
-    //}
+    
         
 }

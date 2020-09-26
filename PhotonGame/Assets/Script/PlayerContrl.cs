@@ -5,10 +5,6 @@ using System;
 
 public class PlayerContrl : MonoBehaviour
 {
-    //PhotonView pv;
-
-    //public Sprite[] glasses;
-
     public GameObject player;
 
     public void WearGlasses1(int index)
